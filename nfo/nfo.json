@@ -1,0 +1,2678 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "exif": "http://www.kanzaki.com/ns/exif#",
+    "nao": "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#",
+    "nco": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#",
+    "nexif": "http://www.semanticdesktop.org/ontologies/2007/05/10/nexif#",
+    "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#",
+    "nid3": "http://www.semanticdesktop.org/ontologies/2007/05/10/nid3#",
+    "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
+    "nmm": "http://www.semanticdesktop.org/ontologies/2009/02/19/nmm#",
+    "nrl": "http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "nie:isLogicalPartOf",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:NamedIndividual"
+      ],
+      "nrl:inverseProperty": {
+        "@id": "nie:hasLogicalPart"
+      },
+      "rdfs:comment": "Generic property used to express 'logical' containment relationships between DataObjects. NIE extensions are encouraged to provide more specific subproperties of this one. It is advisable for actual instances of InformationElement to use those specific subproperties. Note the difference between 'physical' containment (isPartOf) and logical containment (isLogicalPartOf)",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:isLogicalPartOf",
+      "rdfs:range": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nexif:userComment",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 37510\nA tag for Exif users to write keywords or comments on the image besides those in ImageDescription, and without the character code limitations of the ImageDescription tag. The character code used in the UserComment tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area.",
+      "rdfs:label": "nexif:userComment",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:userInfo"
+      }
+    },
+    {
+      "@id": "_:N07d7ee2aeb0b4b84ab1296e95a31cc94",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location"
+      },
+      "owl:someValuesFrom": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#filePeakHour",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Peak hour of the file. Value ranges from 0 to 23.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:filePeakHour",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nid3:publishersWebpage",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "WPUB\nThe 'Publishers official webpage' frame is a URL pointing at the official wepage for the publisher.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:publishersWebpage",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nfo:bitDepth",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "A common superproperty for all properties signifying the amount of bits for an atomic unit of data. Examples of subproperties may include bitsPerSample and bitsPerPixel",
+      "rdfs:domain": {
+        "@id": "nfo:Media"
+      },
+      "rdfs:label": "nfo:nfobitDepth",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "nfo:Archive",
+      "@type": "owl:Class",
+      "rdfs:comment": "A compressed file. May contain other files or folder inside. ",
+      "rdfs:label": "nfo:Archive",
+      "rdfs:subClassOf": {
+        "@id": "nfo:DataContainer"
+      }
+    },
+    {
+      "@id": "nfo:ArchiveItem",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file entity inside an archive.",
+      "rdfs:label": "nfo:ArchiveItem",
+      "rdfs:subClassOf": {
+        "@id": "nfo:EmbeddedFileDataObject"
+      }
+    },
+    {
+      "@id": "nrl:maxCardinality",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nao:Agent",
+      "@type": "owl:Class",
+      "rdfs:label": "nao:Agent",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nid3:officialAudioSourceWebpage",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "WOAS\nThe 'Official audio source webpage' frame is a URL pointing at the official webpage for the source of the audio file, e.g. a movie.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:officialAudioSourceWebpage",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nexif:gpsImgDirection",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 17\nThe direction of the image when it was captured. The range of values is from 0.00 to 359.99.",
+      "rdfs:label": "nexif:gpsImgDirection",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileAccessedTime",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "File accessed time.",
+      "rdfs:domain": [
+        {
+          "@id": "https://w3id.org/sfs-ontology#FileAccess"
+        },
+        {
+          "@id": "nfo:FileDataObject"
+        }
+      ],
+      "rdfs:label": "sfs:fileAccessedTime",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "nie:disclaimer",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A disclaimer",
+      "rdfs:label": "nie:disclaimer",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:legal"
+      }
+    },
+    {
+      "@id": "nfo:aspectRatio",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Visual content aspect ratio. (Width divided by Height)",
+      "rdfs:domain": {
+        "@id": "nfo:Visual"
+      },
+      "rdfs:label": "nfo:aspectRatio",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      }
+    },
+    {
+      "@id": "nie:title",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Name given to an InformationElement",
+      "rdfs:label": "nie:title",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nid3:leadArtist",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TPE1\nThe 'Lead artist(s)/Lead performer(s)/Soloist(s)/Performing group' is used for the main artist(s). They are seperated with the \"/\" character.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:leadArtist",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nmm:MusicPiece",
+      "@type": "owl:Class",
+      "rdfs:comment": "Used to assign music-specific properties such a BPM to video and audio",
+      "rdfs:label": "nmm:music",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Audio"
+      }
+    },
+    {
+      "@id": "nfo:lineCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of lines in a text document",
+      "rdfs:domain": {
+        "@id": "nfo:TextDocument"
+      },
+      "rdfs:label": "nfo:lineCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nid3:trackNumber",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TRCK\nThe 'Track number/Position in set' frame is a numeric string containing the order number of the audio-file on its original recording. This may be extended with a \"/\" character and a numeric string containing the total numer of tracks/elements on the original recording. E.g. \"4/9\".",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:trackNumber",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nid3:composer",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TCOM\nThe 'Composer(s)' frame is intended for the name of the composer(s). They are seperated with the \"/\" character.\nNote that in the RDF representation each composer is represented with a separate triple.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:composer",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nid3:ID3Audio",
+      "@type": "owl:Class",
+      "rdfs:comment": "A File annotated with ID3 tags. Implementation notes: use nie:title for the actual name of the piece (TIT2, the 'Title/Songname/Content description' frame); use nie:language for the languages of the text or lyrics spoken or sung in the audio (TLAN, the 'Language(s)' frame); use nie:comment for any kind of full text information that does not fit in any other frame (COMM frame).",
+      "rdfs:label": "nid3:ID3Audio",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Audio"
+      }
+    },
+    {
+      "@id": "nfo:paletteSize",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The number of colors defined in palette of the raster image.",
+      "rdfs:domain": {
+        "@id": "nfo:RasterImage"
+      },
+      "rdfs:label": "nfo:palette size",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nie:contentSize",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "The size of the content. This property can be used whenever the size of the content of an InformationElement differs from the size of the DataObject. (e.g. because of compression, encoding, encryption or any other representation issues). The contentSize in expressed in bytes.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:contentSize",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nie:plainTextContent",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Plain-text representation of the content of a InformationElement with all markup removed. The main purpose of this property is full-text indexing and search. Its exact content is considered application-specific. The user can make no assumptions about what is and what is not contained within. Applications should use more specific properties wherever possible.",
+      "rdfs:label": "nie:plainTextContent",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:gps",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "The location where the picture has been made. This property aggregates values of two properties from the original EXIF specification: gpsLatitute (tag number 2) and gpsLongitude (tag number 4), and gpsAltitude (tag number 6).",
+      "rdfs:domain": {
+        "@id": "nexif:Photo"
+      },
+      "rdfs:label": "nexif:gps",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      }
+    },
+    {
+      "@id": "nfo:Application",
+      "@type": "owl:Class",
+      "rdfs:comment": "An application",
+      "rdfs:label": "nfo:Application",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Software"
+      }
+    },
+    {
+      "@id": "nao:identifier",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Defines a generic identifier for a resource",
+      "rdfs:label": "nao:identifier"
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
+      "@type": "owl:Class",
+      "rdfs:comment": [
+        " \nUniquely identified by lat/long/alt. i.e.\n\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\n\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\n  ",
+        "A point, typically described using a coordinate system relative to Earth, such as WGS84.\n  "
+      ],
+      "rdfs:label": "geo:Point",
+      "rdfs:subClassOf": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      }
+    },
+    {
+      "@id": "nfo:characterCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of characters in the document.",
+      "rdfs:domain": {
+        "@id": "nfo:TextDocument"
+      },
+      "rdfs:label": "nfo:characterCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileNearDuplicateOf",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:SymmetricProperty"
+      ],
+      "rdfs:comment": "Approximate match. Files that are identical to some extent. These could be older versions of the file. Use a similarity threshold to detect near-duplicates. e.g. If Similarity between two files is > 80%, then both files are \"near duplicates\".",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileNearDuplicateOf",
+      "rdfs:range": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      },
+      "rdfs:label": "geo:long",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "_:N70e7ad15f5274a8b89d590ffdd921d08",
+      "@type": "owl:Restriction",
+      "owl:maxQualifiedCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onClass": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      },
+      "owl:onProperty": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location"
+      }
+    },
+    {
+      "@id": "nfo:colorDepth",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Amount of bits used to express the color of each pixel.",
+      "rdfs:domain": {
+        "@id": "nfo:Visual"
+      },
+      "rdfs:label": "nfo:colorDepth",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:bitDepth"
+      }
+    },
+    {
+      "@id": "nfo:depicts",
+      "@type": "owl:ObjectProperty",
+      "nrl:inverseProperty": {
+        "@id": "nfo:depiction"
+      },
+      "rdfs:comment": "Relates an image to the information elements it depicts.",
+      "rdfs:domain": {
+        "@id": "nfo:Image"
+      },
+      "rdfs:label": "nfo:depicts",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nfo:Software",
+      "@type": "owl:Class",
+      "rdfs:comment": "A piece of software. Examples may include applications and the operating system. This interpretation most commonly applies to SoftwareItems.",
+      "rdfs:label": "nfo:Software",
+      "rdfs:subClassOf": [
+        {
+          "@id": "nie:InformationElement"
+        },
+        {
+          "@id": "nao:Agent"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileCreatedByApplication",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty"
+      ],
+      "rdfs:comment": "Specifies application using which a file is originally created. This property helps in maintaining provenance information of a file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileCreatedByApplication",
+      "rdfs:range": {
+        "@id": "nfo:Application"
+      }
+    },
+    {
+      "@id": "nexif:shutterSpeedValue",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 37377\nShutter speed. The unit is the APEX (Additive System of Photographic Exposure) setting",
+      "rdfs:label": "nexif:shutterSpeedValue",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:pictTaking"
+      }
+    },
+    {
+      "@id": "nfo:FileDataObject",
+      "@type": "owl:Class",
+      "rdfs:comment": "A resource containing a finite sequence of bytes with arbitrary information, that is available to a computer program and is usually based on some kind of durable storage. A file is durable in the sense that it remains available for programs to use after the current program has finished.",
+      "rdfs:label": "nfo:file",
+      "rdfs:subClassOf": {
+        "@id": "nie:DataObject"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileFrequentlyAccessedWith",
+      "@type": [
+        "owl:SymmetricProperty",
+        "owl:ObjectProperty"
+      ],
+      "rdfs:comment": "A file that is frequently accessed with another file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileFrequentlyAccessedWith",
+      "rdfs:range": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "nid3:contentType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TCON\n\nThe 'Content type', which previously was stored as a one byte numeric value only, is now a numeric string. You may use one or several of the types as ID3v1.1 did or, since the category list would be impossible to maintain with accurate and up to date categories, define your own. \n\nReferences to the ID3v1 genres can be made by, as first byte, enter \"(\" followed by a number from the genres list (appendix A) and ended with a \")\" character. This is optionally followed by a refinement, e.g. \"(21)\" or \"(4)Eurodisco\". Several references can be made in the same frame, e.g. \"(51)(39)\". If the refinement should begin with a \"(\" character it should be replaced with \"((\", e.g. \"((I can figure out any genre)\" or \"(55)((I think...)\". The following new content types is defined in ID3v2 and is implemented in the same way as the numerig content types, e.g. \"(RX)\". \nRX    Remix \nCR    Cover",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:contentType",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nie:depends",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Dependency relation. A piece of content depends on another piece of data in order to be properly understood/used/interpreted.",
+      "rdfs:label": "nie:depends",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:relatedTo"
+      }
+    },
+    {
+      "@id": "nfo:averageBitrate",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The average overall bitrate of a media container. (i.e. the size of the piece of media in bits, divided by it's duration expressed in seconds).",
+      "rdfs:domain": {
+        "@id": "nfo:Media"
+      },
+      "rdfs:label": "nfo:averageBitrate",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:rate"
+      }
+    },
+    {
+      "@id": "nco:contributor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nco:contributor",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nao:contributor"
+      }
+    },
+    {
+      "@id": "nfo:RemoteDataObject",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file data object stored at a remote location. Don't confuse this class with a RemotePortAddress. This one applies to a particular resource, RemotePortAddress applies to an address, that can have various interpretations.",
+      "rdfs:label": "nfo:RemoteDataObject",
+      "rdfs:subClassOf": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileDuplicateOf",
+      "@type": [
+        "owl:SymmetricProperty",
+        "owl:ObjectProperty"
+      ],
+      "rdfs:comment": "Exact match. Files that are 100 % identical.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileDuplicateOf",
+      "rdfs:range": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "nexif:focalLength",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The actual focal length of the lens, in mm. Conversion is not made to the focal length of a 35 mm film camera.\ntagNumber: 37386",
+      "rdfs:label": "nexif:focalLength",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:mm"
+        },
+        {
+          "@id": "nexif:pictTaking"
+        }
+      ]
+    },
+    {
+      "@id": "nexif:dateTime",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The date and time of image creation. In this standard it is the date and time the file was changed.\ntagNumber: 306",
+      "rdfs:label": "nexif:dateTime",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:exifAttribute"
+        },
+        {
+          "@id": "nie:lastModified"
+        },
+        {
+          "@id": "nexif:date"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileCreatedOnDevice",
+      "@type": [
+        "owl:FunctionalProperty",
+        "owl:ObjectProperty"
+      ],
+      "rdfs:comment": "Computer or Device on which a file is created.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileCreatedOnDevice"
+    },
+    {
+      "@id": "nexif:length",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Length of an object. Could be a subProperty of other general schema.",
+      "rdfs:label": "nexif:length",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileCreatedByUser",
+      "@type": [
+        "owl:FunctionalProperty",
+        "owl:ObjectProperty"
+      ],
+      "rdfs:comment": "User who originally created file. This property helps in maintaining provenance information of a file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileCreatedByUser",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nfo:TextDocument",
+      "@type": "owl:Class",
+      "rdfs:comment": "A text document",
+      "rdfs:label": "nfo:TextDocument",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Document"
+      }
+    },
+    {
+      "@id": "nid3:title",
+      "@type": "owl:DatatypeProperty",
+      "nao:deprecated": true,
+      "rdfs:comment": "TIT2\nThe 'Title/Songname/Content description' frame is the actual name of the piece (e.g. \"Adagio\", \"Hurricane Donna\"). Deprecated in favor of the more generic nie:title.",
+      "rdfs:label": "nid3:title",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:title"
+      }
+    },
+    {
+      "@id": "nie:byteSize",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "The overall size of the data object in bytes. That means the space taken by the DataObject in its container, and not the size of the content that is of interest to the user. For cases where the content size is different (e.g. in compressed files the content is larger, in messages the content excludes headings and is smaller) use more specific properties, not necessarily subproperties of this one.",
+      "rdfs:label": "nie:byteSize",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nexif:date",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "a date information. Usually saved as YYYY:MM:DD (HH:MM:SS) format in Exif data, but represented here as W3C-DTF format",
+      "rdfs:label": "nexif:date",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#belongedToContainer",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Previous container of a file. Models the containment relations between Files and Folders (or compressed files) where they were previously been in. A user group semantically related files in a folder. If a user place a file in one folder and then after some time he moves it to another folder then it indicates that files in both folders are somehow related to each other. Tracking previous containers/folders of a file enables to relate a file with the files of containers where it previously belonged to.",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": "sfs:belongedToContainer",
+      "rdfs:range": {
+        "@id": "nfo:DataContainer"
+      }
+    },
+    {
+      "@id": "nfo:frameRate",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Amount of video frames per second.",
+      "rdfs:domain": {
+        "@id": "nfo:Video"
+      },
+      "rdfs:label": "nfo:frameRate",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:rate"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#FileAccess",
+      "@type": "owl:Class",
+      "rdfs:comment": "FileAccess uniquely identified by time, latitude, longitude and altitude. An object of FileAccess is created upon each file access. fileAccessLocation property relates objects of nfo:FileDataObject and FileAccess classes. This enables to track accessed time and location of a file.",
+      "rdfs:label": "sfs:FileAccess",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N49207187998846ed8bf7c9169a9c7a75"
+        },
+        {
+          "@id": "_:Ne8c3db1dfd924dfa969f9dee748d1f22"
+        },
+        {
+          "@id": "_:N70e7ad15f5274a8b89d590ffdd921d08"
+        },
+        {
+          "@id": "rdfs:Resource"
+        },
+        {
+          "@id": "_:N07d7ee2aeb0b4b84ab1296e95a31cc94"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ne8c3db1dfd924dfa969f9dee748d1f22",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "https://w3id.org/sfs-ontology#fileAccessedTime"
+      },
+      "owl:someValuesFrom": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "geo:location",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      }
+    },
+    {
+      "@id": "nfo:LocalFileDataObject",
+      "@type": "owl:Class",
+      "rdfs:comment": "A local file data object which is stored on a local file system. Its nie:url always uses the file:/ protocol. The main use of this class is to distinguish local and non-local files.",
+      "rdfs:label": "nfo:local file",
+      "rdfs:subClassOf": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "nexif:compression",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The compression scheme used for the image data. When a primary image is JPEG compressed, this designation is not necessary and is omitted. When thumbnails use JPEG compression, this tag value is set to 6.\ntagNumber: 259",
+      "rdfs:label": "nexif:compression",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:imageDataStruct"
+      }
+    },
+    {
+      "@id": "nfo:Audio",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file containing audio content",
+      "rdfs:label": "nfo:Audio",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Media"
+      }
+    },
+    {
+      "@id": "nexif:gpsSpeedRef",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 12\nThe unit used to express the GPS receiver speed of movement. 'K' 'M' and 'N' represents kilometers per hour, miles per hour, and knots.",
+      "rdfs:label": "nexif:gpsSpeedRef",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nie:keyword",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Adapted DublinCore: The topic of the content of the resource, as keyword. No sentences here. Recommended best practice is to select a value from a controlled vocabulary or formal classification scheme. ",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:keyword",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileCreatedTogather",
+      "@type": [
+        "owl:SymmetricProperty",
+        "owl:ObjectProperty"
+      ],
+      "rdfs:comment": "Files created together within a predefined threshold.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileCreatedTogather",
+      "rdfs:range": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "nid3:attachedPicture",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "A picture attached to an audio file. The DataObject refered to by this property is usually interpreted as an nfo:Image Inspired by the attached picture tag defined in http://www.id3.org/id3v2.3.0 sec. 4.15)",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:attachedPicture",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:hasPart"
+      }
+    },
+    {
+      "@id": "nfo:Visual",
+      "@type": "owl:Class",
+      "rdfs:comment": "File containing visual content.",
+      "rdfs:label": "nfo:Visual",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Media"
+      }
+    },
+    {
+      "@id": "nie:hasLogicalPart",
+      "@type": "owl:ObjectProperty",
+      "nrl:inverseProperty": {
+        "@id": "nie:isLogicalPartOf"
+      },
+      "rdfs:comment": "Generic property used to express 'logical' containment relationships between InformationElements. NIE extensions are encouraged to provide more specific subproperties of this one. It is advisable for actual instances of InformationElement to use those specific subproperties. Note the difference between 'physical' containment (hasPart) and logical containment (hasLogicalPart)",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:hasLogicalPart",
+      "rdfs:range": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nexif:gpsSpeed",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The speed of GPS receiver movement.\ntagNumber: 13",
+      "rdfs:label": "nexif:gpsSpeed",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nfo:belongsToContainer",
+      "@type": "owl:ObjectProperty",
+      "owl:propertyDisjointWith": {
+        "@id": "https://w3id.org/sfs-ontology#belongedToContainer"
+      },
+      "rdfs:comment": "Models the containment relations between Files and Folders (or CompressedFiles).",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": "nfo:belongsToContainer",
+      "rdfs:range": {
+        "@id": "nfo:DataContainer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:isPartOf"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#filePeakLocation",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Geographical location where a file is frequently accessed.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:filePeakLocation",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      }
+    },
+    {
+      "@id": "nmm:Movie",
+      "@type": "owl:Class",
+      "rdfs:comment": "A Movie",
+      "rdfs:label": "nmm:Movie",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Video"
+      }
+    },
+    {
+      "@id": "nao:contributor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "nao:contributor"
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat_long",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A comma-separated representation of a latitude, longitude coordinate.",
+      "rdfs:label": "geo:lat/long",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:fileName",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Name of the file, together with the extension",
+      "rdfs:label": "nfo:fileName",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:fileLastModified",
+      "@type": "owl:DatatypeProperty",
+      "nao:deprecated": true,
+      "rdfs:comment": "last modification date",
+      "rdfs:label": "nfo:fileLastModified",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:lastModified"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileManualPeekLocation",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Manual location based annotation. The difference between filePeakLocation and fileManualPeakLocation is that in the former annotation is done automatically as user interact with files and in the later annotation is done manually by a user.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileManualPeakLocation",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#contentType",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Minimum age restriction of the user to access a file or folder. If its value is set to 18 then the contents will not be accessible to non-adults.",
+      "rdfs:domain": [
+        {
+          "@id": "nfo:DataContainer"
+        },
+        {
+          "@id": "nfo:FileDataObject"
+        }
+      ],
+      "rdfs:label": "sfs:contentType"
+    },
+    {
+      "@id": "nid3:originalAlbumTitle",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TOAL\nThe 'Original album/movie/show title' frame is intended for the title of the original recording (or source of sound), if for example the music in the file should be a cover of a previously released song.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:originalAlbumTitle",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:height",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Height of an object",
+      "rdfs:label": "nexif:height",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:length"
+      }
+    },
+    {
+      "@id": "nexif:userInfo",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An attribute relating to User Information",
+      "rdfs:label": "nexif:userInfo",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nie:lastModified",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Last modification date of the DataObject. Note that this date refers to the modification of the DataObject itself (i.e. the physical representation). Compare with nie:contentLastModified.",
+      "rdfs:label": "nie:lastModified",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:modified"
+      }
+    },
+    {
+      "@id": "nie:InformationElement",
+      "@type": "owl:Class",
+      "rdfs:comment": "A unit of content the user works with. This is a superclass for all interpretations of a DataObject.",
+      "rdfs:label": "nie:InformationElement",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nid3:generalEncapsulatedObject",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "An arbitrary file embedded in an audio file. Inspired by http://www.id3.org/id3v2.3.0 sec. \n4.16)",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:generalEncapsulatedObject",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:hasPart"
+      }
+    },
+    {
+      "@id": "nfo:verticalResolution",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Vertical resolution of an Image (if printed). Expressed in DPI",
+      "rdfs:domain": {
+        "@id": "nfo:Image"
+      },
+      "rdfs:label": "nfo:verticalResolution",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "dc:date",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nco:Contact",
+      "@type": "owl:Class",
+      "rdfs:label": "nco:Contact",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nid3:involvedPersonContact",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "An actual contact to the involved person.",
+      "rdfs:domain": {
+        "@id": "nid3:InvolvedPerson"
+      },
+      "rdfs:label": "nid3:involvedPersonContact",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nie:modified",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Date the DataObject was changed in any way.  Note that this date refers to the modification of the DataObject itself (i.e. the physical representation). Compare with nie:contentModified.",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": "nie:modified",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "nexif:gpsInfo",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An attribute relating to GPS information",
+      "rdfs:label": "nexif:gpsInfo",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      },
+      "rdfs:label": "geo:lat",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:yResolution",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 283\nThe number of pixels per ResolutionUnit in the ImageLength direction. The same value as XResolution is designated.",
+      "rdfs:label": "nexif:yResolution",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:imageDataStruct"
+        },
+        {
+          "@id": "nexif:resolution"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing",
+      "@type": "owl:Class",
+      "rdfs:comment": "Anything with spatial extent, i.e. size, shape, or position.\n e.g. people, places, bowling balls, as well as abstract areas like cubes.\n",
+      "rdfs:label": "geo:SpatialThing"
+    },
+    {
+      "@id": "nfo:hasMediaFileListEntry",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "This property is intended to point to an RDF list of MediaFiles.",
+      "rdfs:domain": {
+        "@id": "nfo:MediaList"
+      },
+      "rdfs:label": "nfo:hasMediaFileListEntry",
+      "rdfs:range": {
+        "@id": "nfo:MediaFileListEntry"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileModifiedByUser",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Tracks users who modify the file. This property helps in preserving provenance information of a file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileModifiedByUser",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nid3:length",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TLEN\nThe 'Length' frame contains the length of the audiofile in milliseconds, represented as a numeric string.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:length",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "nfo:DataContainer",
+      "@type": "owl:Class",
+      "rdfs:comment": "A superclass for all entities, whose primary purpose is to serve as containers for other data object. They usually don't have any \"meaning\" by themselves. Examples include folders, archives and optical disc images.",
+      "rdfs:label": "nfo:DataContainer",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nie:isStoredAs",
+      "@type": "owl:ObjectProperty",
+      "nrl:inverseProperty": {
+        "@id": "nie:interpretedAs"
+      },
+      "rdfs:comment": "Links the information element with the DataObject it is stored in.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:isStoredAs",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      }
+    },
+    {
+      "@id": "nfo:sampleCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of samples in an audio clip.",
+      "rdfs:domain": {
+        "@id": "nfo:Audio"
+      },
+      "rdfs:label": "nfo:sampleCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:count"
+      }
+    },
+    {
+      "@id": "nie:url",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:NamedIndividual"
+      ],
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "URL of a DataObject. It points to the location of the object. A typial usage is FileDataObject. In cases where creating a simple file:// or http:// URL for a file is difficult (e.g. for files inside compressed archives) the applications are encouraged to use conventions defined by Apache Commons VFS Project at http://jakarta.apache.org/  commons/ vfs/ filesystems.html.",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": [
+        "nie:url",
+        "url"
+      ],
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileModifiedByApplication",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Relates a file to application which makes changes to a file. This property helps in maintaining provenance information of a file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileModifiedByApplication",
+      "rdfs:range": {
+        "@id": "nfo:Application"
+      }
+    },
+    {
+      "@id": "nfo:Document",
+      "@type": "owl:Class",
+      "rdfs:comment": "A generic document. A common superclass for all documents on the desktop.",
+      "rdfs:label": "nfo:Document",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nid3:involvment",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "How was this particular person involved in this particular track.",
+      "rdfs:domain": {
+        "@id": "nid3:InvolvedPerson"
+      },
+      "rdfs:label": "nid3:involvment",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nie:identifier",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An unambiguous reference to the InformationElement within a given context. Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.",
+      "rdfs:label": "nie:identifier",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nao:identifier"
+      }
+    },
+    {
+      "@id": "nexif:exifAttribute",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A property that connects an IFD (or other resource) to one of its entries (Exif attribute). Super property which integrates all Exif tags. Domain definition dropped so that this vocabulary can be used to describe not only Exif IFD, but also general image.",
+      "rdfs:label": "nexif:exifAttribute",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:permissions",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "A string containing the permissions of a file. A feature common in many UNIX-like operating systems.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "nfo:permissions",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nie:description",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A textual description of the resource. This property may be used for any metadata fields that provide some meta-information or comment about a resource in the form of a passage of text. This property is not to be confused with nie:plainTextContent. Use more specific subproperties wherever possible.",
+      "rdfs:label": "nie:description",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nid3:originalArtist",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TOPE\nThe 'Original artist(s)/performer(s)' frame is intended for the performer(s) of the original recording, if for example the music in the file should be a cover of a previously released song. The performers are seperated with the \"/\" character.\nNote that in the RDF repressentation each orignal artist is represented with a separate triple.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:originalArtist",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nie:links",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "A linking relation. A piece of content links/mentions a piece of data",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:links",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:relatedTo"
+      }
+    },
+    {
+      "@id": "nexif:gpsAreaInformation",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A character string recording the name of the GPS area. The first byte indicates the character code used, and this is followed by the name of the GPS area.\ntagNumber: 28",
+      "rdfs:label": "nexif:gpsAreaInformation",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nid3:textWriter",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TEXT\nThe 'Lyricist(s)/Text writer(s)' frame is intended for the writer(s) of the text or lyrics in the recording. They are seperated with the \"/\" character.\nNote that in the RDF representation each text writer is represented with a separate triple.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:textWriter",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nexif:imageDataStruct",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An attribute relating to image data structure",
+      "rdfs:label": "nexif:imageDataStruct",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nexif:width",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Width of an object",
+      "rdfs:label": "nexif:width",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:length"
+      }
+    },
+    {
+      "@id": "nfo:PaginatedTextDocument",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file containing a text document, that is unambiguously divided into pages. Examples might include PDF, DOC, PS, DVI etc.",
+      "rdfs:label": "nfo:PaginatedTextDocument",
+      "rdfs:subClassOf": {
+        "@id": "nfo:TextDocument"
+      }
+    },
+    {
+      "@id": "nid3:fileType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TFLT\nThe 'File type' frame indicates which type of audio this tag defines. The following type and refinements are defined: \nMPG MPEG Audio; \n/1 MPEG 1/2 layer I;\n/2 MPEG 1/2 layer II;\n/3 MPEG 1/2 layer III;\n/2.5 MPEG 2.5;\n/AAC Advanced audio compression;\nVQF Transform-domain Weighted Interleave Vector Quantization;\nPCM Pulse Code Modulated audio;",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:fileType",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:wordCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of words in a text document.",
+      "rdfs:domain": {
+        "@id": "nfo:TextDocument"
+      },
+      "rdfs:label": "nfo:wordCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nfo:colorCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The number of colors used/available in a raster image.",
+      "rdfs:domain": {
+        "@id": "nfo:RasterImage"
+      },
+      "rdfs:label": "nfo:color count",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nfo:height",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Visual content height in pixels.",
+      "rdfs:label": "nfo:height",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nexif:gpsTrackRef",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 14\nThe reference for giving the direction of GPS receiver movement. 'T' denotes true direction and 'M' is magnetic direction.",
+      "rdfs:label": "nexif:gpsTrackRef",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nfo:EmbeddedFileDataObject",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file embedded in another data object. There are many ways in which a file may be embedded in another one. Use this class directly only in cases if none of the subclasses gives a better description of your case.",
+      "rdfs:label": "nfo:EmbeddedFileDataObject",
+      "rdfs:subClassOf": {
+        "@id": "nfo:FileDataObject"
+      }
+    },
+    {
+      "@id": "nie:created",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Date of creation of the DataObject. Note that this date refers to the creation of the DataObject itself (i.e. the physical representation). Compare with nie:contentCreated.",
+      "rdfs:label": "nie:created",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:modified"
+      }
+    },
+    {
+      "@id": "nexif:Photo",
+      "@type": "owl:Class",
+      "rdfs:comment": "A photo, an image captured using a camera, an EXIF Image File Directory. Implementation notes: use nie:copyright to store copyright notices.",
+      "rdfs:label": "nexif:Photo",
+      "rdfs:subClassOf": {
+        "@id": "nfo:RasterImage"
+      }
+    },
+    {
+      "@id": "nfo:hasHash",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileAccessedLocation_Time",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "It relates objects of nfo:FileDataObject and FileAccess classes. Which enables to track accessed time and location of a file. So, frequent access timings and locations can be calculated.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileAccessedLocation_Time",
+      "rdfs:range": {
+        "@id": "https://w3id.org/sfs-ontology#FileAccess"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "dc:date": "$Date: 2009/04/20 15:00:30 $",
+      "dc:description": "A vocabulary for representing latitude, longitude and \n altitude information in the WGS84 geodetic reference datum. \n Version $Id: wgs84_pos.rdf,v 1.22 2009/04/20 15:00:30 timbl Exp $. See http://www.w3.org/2003/01/geo/ for more details.",
+      "dc:title": "WGS84 Geo Positioning: an RDF vocabulary",
+      "rdfs:comment": "\nRecent changes to this namespace:\n$Log: wgs84_pos.rdf,v $\nRevision 1.22  2009/04/20 15:00:30  timbl\nRemove the time bits which have been deal with elsewhere eg in iCal.\n\nRevision 1.21  2009/04/20 12:52:47  timbl\ntry again\n\nRevision 1.20  2009/04/20 12:42:11  timbl\nAdd Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)\n\nRevision 1.19  2009/04/20 12:36:31  timbl\nAdd Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)\n\nRevision 1.18  2006/02/01 22:01:04  danbri\nClarified that lat and long are decimal degrees, and that alt is decimal metres about local reference ellipsoid\n\nRevision 1.17  2004/02/06 17:38:12  danbri\nFixed a bad commit screwup\n\nRevision 1.15  2003/04/19 11:24:08  danbri\nFixed the typo even more.\n\nRevision 1.14  2003/04/19 11:16:56  danbri\nfixed a typo\n\nRevision 1.13  2003/02/19 22:27:27  connolly\nrelaxed domain constraints on lat/long/alt from Point to SpatialThing\n\nRevision 1.12  2003/01/12 01:41:41  danbri\nTrying local copy of XSLT doc.\n\nRevision 1.11  2003/01/12 01:20:18  danbri\nadded a link to morten's xslt rdfs viewer.\n\nRevision 1.10  2003/01/11 18:56:49  danbri\nRemoved datatype range from lat and long properties, since they would\nhave required each occurance of the property to mention the datatype.\n\nRevision 1.9  2003/01/11 11:41:31  danbri\nAnother typo; repaired rdfs:Property to rdf:Property x4\n\nRevision 1.8  2003/01/11 11:05:02  danbri\nAdded an rdfs:range for each lat/long/alt property,\nhttp://www.w3.org/2001/XMLSchema#float\n\nRevision 1.7  2003/01/10 20:25:16  danbri\nLonger rdfs:comment for Point, trying to be Earth-centric and neutral about\ncoordinate system(s) at the same time. Feedback welcomed.\n\nRevision 1.6  2003/01/10 20:18:30  danbri\nAdded CVS log comments into the RDF/XML as an rdfs:comment property of the\nvocabulary. Note that this is not common practice (but seems both harmless\nand potentially useful).\n\n\nrevision 1.5\ndate: 2003/01/10 20:14:31;  author: danbri;  state: Exp;  lines: +16 -5\nUpdated schema:\nAdded a dc:date, added url for more info. Changed the rdfs:label of the\nnamespace from gp to geo. Added a class Point, set as the rdfs:domain of\neach property. Added XML comment on the lat_long property suggesting that\nwe might not need it (based on #rdfig commentary from implementors).\n\nrevision 1.4\ndate: 2003/01/10 20:01:07;  author: danbri;  state: Exp;  lines: +6 -5\nFixed typo; several rdfs:about attributes are now rdf:about. Thanks to MortenF in\n#rdfig for catching this error.\n\nrevision 1.3\ndate: 2003/01/10 11:59:03;  author: danbri;  state: Exp;  lines: +4 -3\nfixed buglet in vocab, added more wgs links\n\nrevision 1.2\ndate: 2003/01/10 11:01:11;  author: danbri;  state: Exp;  lines: +4 -4\nRemoved alt from the as-a-flat-string property, and switched from\nspace separated to comma separated.\n\nrevision 1.1\ndate: 2003/01/10 10:53:23;  author: danbri;  state: Exp;\nbasic geo vocab\n\n",
+      "rdfs:label": "geo"
+    },
+    {
+      "@id": "nie:subject",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An overall topic of the content of a InformationElement",
+      "rdfs:label": "nie:subject",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:imageWidth",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 256\nImage width. The number of columns of image data, equal to the number of pixels per row. In JPEG compressed data a JPEG marker is used instead of this tag.",
+      "rdfs:label": "nexif:imageWidth",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:imageDataStruct"
+        },
+        {
+          "@id": "nexif:width"
+        }
+      ]
+    },
+    {
+      "@id": "nexif:gpsTimeStamp",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 7\nThe time as UTC (Coordinated Universal Time). TimeStamp is expressed as three RATIONAL values giving the hour, minute, and second.",
+      "rdfs:label": "nexif:gpsTimeStamp",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nexif:resolution",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "a rational number representing a resolution. Could be a subProperty of other general schema.",
+      "rdfs:label": "nexif:resolution",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      }
+    },
+    {
+      "@id": "nfo:MediaList",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file containing a list of media files.e.g. a playlist",
+      "rdfs:label": "nfo:MediaList",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nie:generator",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Software used to \"generate\" the contents. E.g. a word processor name.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:generator",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:bitsPerSample",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 258\nThe number of bits per image component. In this standard each component of the image is 8 bits, so the value for this tag is 8. See also SamplesPerPixel. In JPEG compressed data a JPEG marker is used instead of this tag.",
+      "rdfs:label": "nexif:bitsPerSample",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:resolution"
+        },
+        {
+          "@id": "nexif:imageDataStruct"
+        }
+      ]
+    },
+    {
+      "@id": "nid3:originalReleaseYear",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TORY\nThe 'Original release year' frame is intended for the year when the original recording, if for example the music in the file should be a cover of a previously released song, was released. The field is formatted as in the \"TYER\" frame.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:originalReleaseYear",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nie:copyright",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Content copyright",
+      "rdfs:label": "nie:copyright",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:legal"
+      }
+    },
+    {
+      "@id": "nfo:Presentation",
+      "@type": "owl:Class",
+      "rdfs:comment": "A Presentation made by some presentation software (Corel Presentations, OpenOffice Impress, MS Powerpoint etc.)",
+      "rdfs:label": "nfo:Presentation",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Document"
+      }
+    },
+    {
+      "@id": "nexif:flash",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 37385\nThe status of flash when the image was shot.",
+      "rdfs:label": "nexif:flash",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:pictTaking"
+      }
+    },
+    {
+      "@id": "nid3:partOfSet",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TPOS\nThe 'Part of a set' frame is a numeric string that describes which part of a set the audio came from. This frame is used if the source described in the \"TALB\" frame is divided into several mediums, e.g. a double CD. The value may be extended with a \"/\" character and a numeric string containing the total number of parts in the set. E.g. \"1/2\".",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:partOfSet",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nid3:licensee",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TOWN\nThe 'File owner/licensee' frame contains the name of the owner or licensee of the file and it's contents.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:licensee",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nie:comment",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A user comment about an InformationElement.",
+      "rdfs:label": "nie:comment",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nie:relatedTo",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "A common superproperty for all relations between a piece of content and other pieces of data (which may be interpreted as other pieces of content).",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:relatedTo",
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      }
+    },
+    {
+      "@id": "nid3:InvolvedPerson",
+      "@type": "owl:Class",
+      "rdfs:comment": "Since there might be a lot of people contributing to an audio file in various ways, such as musicians and technicians, the 'Text information frames' are often insufficient to list everyone involved in a project. The 'Involved people list' is a frame containing the names of those involved, and how they were involved. The body simply contains a terminated string with the involvement directly followed by a terminated string with the involvee followed by a new involvement and so on. There may only be one \"IPLS\" frame in each tag.\nNote that in this RDF representation each InvolvedPerson is represented with a separate instance of the InvolvedPerson class and with a separate involvedPerson triple.",
+      "rdfs:label": "nid3:InvolvedPerson",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nexif:gpsTrack",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The direction of GPS receiver movement. The range of values is from 0.00 to 359.99.\ntagNumber: 15",
+      "rdfs:label": "nexif:gpsTrack",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nie:DataObject",
+      "@type": "owl:Class",
+      "rdfs:comment": "A unit of data that is created, annotated and processed on the user desktop. It represents a native structure the user works with. The usage of the term 'native' is important. It means that a DataObject can be directly mapped to a data structure maintained by a native application. This may be a file, a set of files or a part of a file. The granularity depends on the user. This class is not intended to be instantiated by itself. Use more specific subclasses.",
+      "rdfs:label": "nie:DataObject",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nfo:width",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Visual content width in pixels.",
+      "rdfs:domain": {
+        "@id": "nfo:Visual"
+      },
+      "rdfs:label": "nfo:width",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nfo:Attachment",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file attached to another data object. Many data formats allow for attachments: emails, vcards, ical events, id3 and exif...",
+      "rdfs:label": "nfo:Attachment",
+      "rdfs:subClassOf": {
+        "@id": "nfo:EmbeddedFileDataObject"
+      }
+    },
+    {
+      "@id": "nfo:sampleRate",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of audio samples per second.",
+      "rdfs:domain": {
+        "@id": "nfo:Audio"
+      },
+      "rdfs:label": "nfo:sampleRate",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:rate"
+      }
+    },
+    {
+      "@id": "nexif:pictTaking",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "An attribute relating to Picture-Taking Conditions",
+      "rdfs:label": "nexif:pictTaking",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nexif:imageLength",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 257\nImage height. The number of rows of image data. In JPEG compressed data a JPEG marker is used.",
+      "rdfs:label": "nexif:imageLength",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:imageDataStruct"
+        },
+        {
+          "@id": "nexif:height"
+        },
+        {
+          "@id": "nfo:height"
+        }
+      ]
+    },
+    {
+      "@id": "nexif:imageDescription",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 270\nA character string giving the title of the image. It may be a comment such as \"1988 company picnic\" or the like. Two-byte character codes cannot be used. When a 2-byte code is necessary, the Exif Private tag UserComment is to be used.",
+      "rdfs:label": "nexif:imageDescription",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nie:title"
+        },
+        {
+          "@id": "nexif:exifAttribute"
+        }
+      ]
+    },
+    {
+      "@id": "nid3:originalTextWriter",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TOLY\nThe 'Original lyricist(s)/text writer(s)' frame is intended for the text writer(s) of the original recording, if for example the music in the file should be a cover of a previously released song. The text writers are seperated with the \"/\" character.\nNote that in the RDF representation each original lyricist is represented with a separate triple.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:originalTextWriter",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nao:userVisible",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nfo:bitsPerSample",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Amount of bits in each audio sample.",
+      "rdfs:domain": {
+        "@id": "nfo:Audio"
+      },
+      "rdfs:label": "nfo:bitsPerSample",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:bitDepth"
+      }
+    },
+    {
+      "@id": "nie:mimeType",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "The mime type of the resource, if available. Example: \"text/plain\". See http://www.iana.org/assignments/media-types/. This property applies to data objects that can be described with one mime type. In cases where the object as a whole has one mime type, while it's parts have other mime types, or there is no mime type that can be applied to the object as a whole, but some parts of the content have mime types - use more specific properties.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:mimeType",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nid3:recordingDate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TRDA\nThe 'Recording dates' frame is a intended to be used as complement to the \"TYER\", \"TDAT\" and \"TIME\" frames. E.g. \"4th-7th June, 12th June\" in combination with the \"TYER\" frame.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:recordingDate",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:Folder",
+      "@type": "owl:Class",
+      "rdfs:comment": "A folder/directory. Examples of folders include folders on a filesystem and message folders in a mailbox.",
+      "rdfs:label": "nfo:Folder",
+      "rdfs:subClassOf": {
+        "@id": "nfo:DataContainer"
+      }
+    },
+    {
+      "@id": "nexif:artist",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "tagNumber: 315\nPerson who created the image",
+      "rdfs:domain": {
+        "@id": "nexif:Photo"
+      },
+      "rdfs:label": "nexif:artist",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "xsd:duration",
+      "@type": "rdfs:Datatype"
+    },
+    {
+      "@id": "nfo:fileOwner",
+      "@type": "owl:ObjectProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The owner of the file as defined by the file system access rights feature.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "nfo:fileOwner",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#filePeakDay",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "File's peak day. The day on which a file is frequently accessed. Value ranges from 0-6, with 0 being Sunday.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:filePeakDay",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nexif:model",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 272\nModel of image input equipment",
+      "rdfs:label": "nexif:model",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nfo:MediaFileListEntry",
+      "@type": "owl:Class",
+      "rdfs:comment": "A single node in the list of media files contained within an MediaList instance. This class is intended to provide a type all those links have. In valid NRL untyped resources cannot be linked. There are no properties defined for this class but the application may expect rdf:first and rdf:last links. The former points to the DataObject instance, interpreted as Media the latter points at another MediaFileListEntr. At the end of the list there is a link to rdf:nil.",
+      "rdfs:label": "nfo:MediaFileListEntry",
+      "rdfs:subClassOf": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nexif:digitalZoomRatio",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 41988\nThe digital zoom ratio when the image was shot. If the numerator of the recorded value is 0, this indicates that digital zoom was not used.",
+      "rdfs:label": "nexif:digitalZoomRatio",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:pictTaking"
+      }
+    },
+    {
+      "@id": "nid3:publisher",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TPUB\nThe 'Publisher' frame simply contains the name of the label or publisher.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:publisher",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nie:isPartOf",
+      "@type": [
+        "owl:NamedIndividual",
+        "owl:ObjectProperty"
+      ],
+      "nao:userVisible": false,
+      "nrl:inverseProperty": {
+        "@id": "nie:hasPart"
+      },
+      "rdfs:comment": "Generic property used to express containment relationships between DataObjects. NIE extensions are encouraged to provide more specific subproperties of this one. It is advisable for actual instances of DataObjects to use those specific subproperties. Note to the developers: Please be aware of the distinction between containment relation and provenance. The isPartOf relation models physical containment, a nie:DataObject (e.g. an nfo:Attachment) is a 'physical' part of an nie:InformationElement (a nmo:Message). Also, please note the difference between physical containment (isPartOf) and logical containment (isLogicalPartOf) the former has more strict meaning. They may occur independently of each other.",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": "nie:isPartOf",
+      "rdfs:range": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nie:language",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Language the InformationElement is expressed in. This property applies to the data object in its entirety. If the data object is divisible into parts expressed in multiple languages - more specific properties should be used. Users are encouraged to use the two-letter code specified in the RFC 3066",
+      "rdfs:label": "nie:language",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:horizontalResolution",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Horizontal resolution of an image (if printed). Expressed in DPI.",
+      "rdfs:domain": {
+        "@id": "nfo:Image"
+      },
+      "rdfs:label": "nfo:horizontalResolution",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nrl:inverseProperty",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nid3:recordingYear",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TYER\nThe 'Year' frame is a numeric string with a year of the recording. This frames is always four characters long (until the year 10000).",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:recordingYear",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nfo:fileUrl",
+      "@type": "owl:ObjectProperty",
+      "nao:deprecated": true,
+      "rdfs:comment": "URL of the file. It points at the location of the file. In cases where creating a simple file:// or http:// URL for a file is difficult (e.g. for files inside compressed archives) the applications are encouraged to use conventions defined by Apache Commons VFS Project at http://jakarta.apache.org/  commons/ vfs/ filesystems.html.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "nfo:fileUrl",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:url"
+      }
+    },
+    {
+      "@id": "nao:deprecated",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "rdfs:Resource",
+      "@type": "owl:Class",
+      "rdfs:label": "rdfs:Resource"
+    },
+    {
+      "@id": "nfo:fileLastAccessed",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Time when the file was last accessed.",
+      "rdfs:label": "nfo:fileLastAccessed",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "nexif:mm",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A length with unit of mm",
+      "rdfs:label": "nexif:mm",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:length"
+      }
+    },
+    {
+      "@id": "nfo:Media",
+      "@type": "owl:Class",
+      "rdfs:comment": "A piece of media content. This class may be used to express complex media containers with many streams of various media content (both aural and visual).",
+      "rdfs:label": "nfo:Media",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nfo:PlainTextDocument",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file containing plain text (ASCII, Unicode or other encodings). Examples may include TXT, HTML, XML, program source code etc.",
+      "rdfs:label": "nfo:PlainTextDocument",
+      "rdfs:subClassOf": {
+        "@id": "nfo:TextDocument"
+      }
+    },
+    {
+      "@id": "dc:title",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nexif:make",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Manufacturer of image input equipment\ntagNumber: 271",
+      "rdfs:label": "nexif:make",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nie:version",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The current version of the given data object. Exact semantics is unspecified at this level. Use more specific subproperties if needed.",
+      "rdfs:label": "nie:version",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nie:hasPart",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:NamedIndividual"
+      ],
+      "nao:userVisible": false,
+      "nrl:inverseProperty": {
+        "@id": "nie:isPartOf"
+      },
+      "rdfs:comment": "Generic property used to express 'physical' containment relationships between DataObjects. NIE extensions are encouraged to provide more specific subproperties of this one. It is advisable for actual instances of DataObjects to use those specific subproperties. Note to the developers: Please be aware of the distinction between containment relation and provenance. The hasPart relation models physical containment, an InformationElement (a nmo:Message) can have a 'physical' part (an nfo:Attachment).  Also, please note the difference between physical containment (hasPart) and logical containment (hasLogicalPart) the former has more strict meaning. They may occur independently of each other.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": [
+        "hasPart",
+        "nie:hasPart"
+      ],
+      "rdfs:range": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:relatedTo"
+      }
+    },
+    {
+      "@id": "nid3:involvedPerson",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Links an ID3 file to an InvolvedPerson, an equivalent of the involvedPeopleList tag. Since there might be a lot of people contributing to an audio file in various ways, such as musicians and technicians, the 'Text information frames' are often insufficient to list everyone involved in a project. The 'Involved people list' is a frame containing the names of those involved, and how they were involved. The body simply contains a terminated string with the involvement directly followed by a terminated string with the involvee followed by a new involvement and so on. There may only be one \"IPLS\" frame in each tag.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:involvedPerson",
+      "rdfs:range": {
+        "@id": "nid3:InvolvedPerson"
+      }
+    },
+    {
+      "@id": "nie:license",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Terms and intellectual property rights licensing conditions.",
+      "rdfs:label": "nie:license",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:legal"
+      }
+    },
+    {
+      "@id": "nid3:officialFileWebpage",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "WOAF\nThe 'Official audio file webpage' frame is a URL pointing at a file specific webpage.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:officialFileWebpage",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nid3:comments",
+      "@type": "owl:DatatypeProperty",
+      "nao:deprecated": true,
+      "rdfs:comment": "COMM - This frame is indended for any kind of full text information that does not fit in any other frame. It consists of a frame header followed by encoding, language and content descriptors and is ended with the actual comment as a text string. Newline characters are allowed in the comment text string. There may be more than one comment frame in each tag, but only one with the same language and content descriptor. Deprecated in favor of the more generic nie:comment.",
+      "rdfs:label": "nid3:comments",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:comment"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileAccessedHistory",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Date and time is recorded each time a file is accessed to maintain a file accessed history.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileAccessedHistory",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology",
+      "@type": "owl:Ontology"
+    },
+    {
+      "@id": "nid3:officialArtistWebpage",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:officialArtistWebpage",
+      "rdfs:range": {
+        "@id": "rdfs:Resource"
+      }
+    },
+    {
+      "@id": "nie:characterSet",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": "1",
+      "rdfs:comment": "Characterset in which the content of the InformationElement was created. Example: ISO-8859-1, UTF-8. One of the registered character sets at http://www.iana.org/assignments/character-sets. This characterSet is used to interpret any textual parts of the content. If more than one characterSet is used within one data object, use more specific properties.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:characterSet",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:Image",
+      "@type": "owl:Class",
+      "rdfs:comment": "A file containing an image.",
+      "rdfs:label": "nfo:Image",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Visual"
+      }
+    },
+    {
+      "@id": "nid3:albumTitle",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TALB\nThe 'Album/Movie/Show title' frame is intended for the title of the recording(/source of sound) which the audio in the file is taken from.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:albumTitle",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nfo:isPasswordProtected",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "States if a given resource is password-protected.",
+      "rdfs:domain": {
+        "@id": "nfo:ArchiveItem"
+      },
+      "rdfs:label": "nfo:isPasswordProtected",
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "nfo:RasterImage",
+      "@type": "owl:Class",
+      "rdfs:comment": "A raster image.",
+      "rdfs:label": "nfo:RasterImage",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Image"
+      }
+    },
+    {
+      "@id": "nexif:xResolution",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The number of pixels per ResolutionUnit in the ImageWidth direction. When the image resolution is unknown, 72 [dpi] is designated.\ntagNumber: 282",
+      "rdfs:label": "nexif:xResolution",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "nexif:imageDataStruct"
+        },
+        {
+          "@id": "nexif:resolution"
+        }
+      ]
+    },
+    {
+      "@id": "nexif:resolutionUnit",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 296\nThe unit for measuring XResolution and YResolution. The same unit is used for both XResolution and YResolution. If the image resolution in unknown, 2 (inches) is designated.",
+      "rdfs:label": "nexif:resolutionUnit",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:imageDataStruct"
+      }
+    },
+    {
+      "@id": "nfo:Video",
+      "@type": "owl:Class",
+      "rdfs:comment": "A video file.",
+      "rdfs:label": "nfo:Video",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Visual"
+      }
+    },
+    {
+      "@id": "dc:description",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "nie:legal",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A common superproperty for all properties that point at legal information about an Information Element",
+      "rdfs:label": "nie:legal",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nmm:MusicAlbum",
+      "@type": "owl:Class",
+      "rdfs:comment": "The music album as provided by the publisher. Not to be confused with media lists or collections.",
+      "rdfs:label": "nmm:MusicAlbum",
+      "rdfs:subClassOf": {
+        "@id": "nfo:MediaList"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileModifiedHistory",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Date and time is recorded each time a file is modified to maintain a file modified history.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileModifiedHistory",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileAccessedCounter",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Number of times the file is accessed.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileAccessedCounter",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nmm:musicAlbum",
+      "@type": "owl:ObjectProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Album the music belongs to",
+      "rdfs:domain": {
+        "@id": "nmm:MusicPiece"
+      },
+      "rdfs:label": "nmm:musicAlbum",
+      "rdfs:range": {
+        "@id": "nmm:MusicAlbum"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:isLogicalPartOf"
+      }
+    },
+    {
+      "@id": "nfo:depiction",
+      "@type": "owl:ObjectProperty",
+      "nrl:inverseProperty": {
+        "@id": "nfo:depicts"
+      },
+      "rdfs:comment": "Relates an information element to an image which depicts said element.",
+      "rdfs:domain": {
+        "@id": "rdfs:Resource"
+      },
+      "rdfs:label": "nfo:depiction",
+      "rdfs:range": {
+        "@id": "nfo:Image"
+      }
+    },
+    {
+      "@id": "nfo:VectorImage",
+      "@type": "owl:Class",
+      "rdfs:label": "nfo:VectorImage",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Image"
+      }
+    },
+    {
+      "@id": "nie:contentModified",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The date of a modification of the original content (not its corresponding DataObject or local copy). Compare with nie:modified.",
+      "rdfs:domain": {
+        "@id": "nie:InformationElement"
+      },
+      "rdfs:label": "nie:modified",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "@id": "nfo:fileCreated",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "File creation date",
+      "rdfs:label": "nfo:fileCreated",
+      "rdfs:range": {
+        "@id": "xsd:dateTime"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:created"
+      }
+    },
+    {
+      "@id": "nfo:fileSize",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The size of the file in bytes. For compressed files it means the size of the packed file, not of the contents. For folders it means the aggregated size of all contained files and folders ",
+      "rdfs:label": "nfo:fileSize",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:byteSize"
+      }
+    },
+    {
+      "@id": "nie:interpretedAs",
+      "@type": "owl:ObjectProperty",
+      "nrl:inverseProperty": {
+        "@id": "nie:isStoredAs"
+      },
+      "rdfs:comment": "Links the DataObject with the InformationElement it is interpreted as.",
+      "rdfs:domain": {
+        "@id": "nie:DataObject"
+      },
+      "rdfs:label": "nie:interpretedAs",
+      "rdfs:range": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nid3:time",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "TIME\nThe 'Time' frame is a numeric string in the HHMM format containing the time for the recording. This field is always four characters long.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:time",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "nexif:apertureValue",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 37378\nThe lens aperture. The unit is the APEX value.",
+      "rdfs:label": "nexif:apertureValue",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:pictTaking"
+      }
+    },
+    {
+      "@id": "nfo:frameCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "The amount of frames in a video sequence.",
+      "rdfs:domain": {
+        "@id": "nfo:Video"
+      },
+      "rdfs:label": "nfo:frameCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nfo:count"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileModifiedOnDevice",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Track devices/computers on which a file is modified. A file is annotated each time if a file is modified by a different device. This property helps in preserving the provenance information of the file.",
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileModifiedOnDevice"
+    },
+    {
+      "@id": "_:N49207187998846ed8bf7c9169a9c7a75",
+      "@type": "owl:Restriction",
+      "owl:maxQualifiedCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onDataRange": {
+        "@id": "xsd:dateTime"
+      },
+      "owl:onProperty": {
+        "@id": "https://w3id.org/sfs-ontology#fileAccessedTime"
+      }
+    },
+    {
+      "@id": "nie:licenseType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "The type of the license. Possible values for this field may include \"GPL\", \"BSD\", \"Creative Commons\" etc.",
+      "rdfs:label": "nie:licenseType",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:legal"
+      }
+    },
+    {
+      "@id": "nmm:musicBrainzTrackID",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "nmm:MusicPiece"
+      },
+      "rdfs:label": "nmm:musicBrainzTrackID",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nie:identifier"
+      }
+    },
+    {
+      "@id": "nexif:software",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 305\nThe name and version of the software or firmware of the camera or image input device used to generate the image.",
+      "rdfs:label": "nexif:software",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:exifAttribute"
+      }
+    },
+    {
+      "@id": "nfo:Spreadsheet",
+      "@type": "owl:Class",
+      "rdfs:comment": "A spreadsheet, created by a spreadsheet application. Examples might include Gnumeric, OpenOffice Calc or MS Excel.",
+      "rdfs:label": "nfo:Spreadsheet",
+      "rdfs:subClassOf": {
+        "@id": "nfo:Document"
+      }
+    },
+    {
+      "@id": "nfo:count",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A common superproperty for all properties signifying the amount of atomic media data units. Examples of subproperties may include sampleCount and frameCount.",
+      "rdfs:domain": {
+        "@id": "nfo:Media"
+      },
+      "rdfs:label": "nfo:count",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "nfo:rate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "A common superproperty for all properties specifying the media rate. Examples of subproperties may include frameRate for video and sampleRate for audio. This property is expressed in units per second.",
+      "rdfs:domain": {
+        "@id": "nfo:Media"
+      },
+      "rdfs:label": "nfo:rate",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      }
+    },
+    {
+      "@id": "nmm:actor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "nfo:Video"
+      },
+      "rdfs:label": "nmm:actor",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nco:contributor"
+      }
+    },
+    {
+      "@id": "nfo:Executable",
+      "@type": "owl:Class",
+      "rdfs:comment": "An executable file.",
+      "rdfs:label": "nfo:Executable",
+      "rdfs:subClassOf": {
+        "@id": "nie:InformationElement"
+      }
+    },
+    {
+      "@id": "nexif:makerNote",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "Manufacturer notes\ntagNumber: 37500",
+      "rdfs:label": "nexif:makerNote",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:userInfo"
+      }
+    },
+    {
+      "@id": "nid3:backgroundArtist",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "TPE2\nThe 'Band/Orchestra/Accompaniment' frame is used for additional information about the performers in the recording.",
+      "rdfs:domain": {
+        "@id": "nid3:ID3Audio"
+      },
+      "rdfs:label": "nid3:backgroundArtist",
+      "rdfs:range": {
+        "@id": "nco:Contact"
+      }
+    },
+    {
+      "@id": "nexif:gpsImgDirectionRef",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "tagNumber: 16\nThe reference for giving the direction of the image when it is captured. 'T' denotes true direction and 'M' is magnetic direction.",
+      "rdfs:label": "nexif:gpsImgDirectionRef",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "nexif:gpsInfo"
+      }
+    },
+    {
+      "@id": "nfo:duration",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Duration of a media piece.",
+      "rdfs:domain": {
+        "@id": "nfo:Media"
+      },
+      "rdfs:label": "nfo:duration",
+      "rdfs:range": {
+        "@id": "xsd:duration"
+      }
+    },
+    {
+      "@id": "https://w3id.org/sfs-ontology#fileCreatedFrom",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:TransitiveProperty"
+      ],
+      "rdfs:domain": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:label": "sfs:fileCreatedFrom",
+      "rdfs:range": {
+        "@id": "nfo:FileDataObject"
+      },
+      "rdfs:seeAlso": "A file created from (the contents of) another file.  If file B is created from file A and file C is created from file B then it can be inferred that file C is also created from file A."
+    },
+    {
+      "@id": "nfo:pageCount",
+      "@type": "owl:DatatypeProperty",
+      "nrl:maxCardinality": 1,
+      "rdfs:comment": "Number of pages.",
+      "rdfs:domain": {
+        "@id": "nfo:PaginatedTextDocument"
+      },
+      "rdfs:label": "nfo:pageCount",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    }
+  ]
+}
+
