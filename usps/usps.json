@@ -1,0 +1,202 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "ns0": "http://www.rddl.org/purposes#",
+    "ns01": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#deliveryAddress",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "unique w.r.t. zip; i.e. a deliveryAddress and a zip uniquely determine an object",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailingLocation"
+      },
+      "rdfs:label": "delivery address",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps",
+      "dc:title": "An RDF Schema for United States Postal Addressing Standards",
+      "ns0:normative-reference": [
+        {
+          "@id": "http://pe.usps.gov/cpim/ftp/pubs/Pub28/pub28.pdf"
+        },
+        {
+          "@id": "http://pe.usps.gov/cpim/ftp/pubs/Pub63/Pub63.pdf"
+        }
+      ],
+      "ns0:ref": [
+        {
+          "@id": "http://pe.usps.gov/cpim/ftp/pubs/Pub28/pub28.pdf"
+        },
+        {
+          "@id": "http://pe.usps.gov/cpim/ftp/pubs/Pub63/Pub63.pdf"
+        }
+      ],
+      "rdfs:seeAlso": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/jobieLabels.pl"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#returnAt",
+      "@type": "rdfs:Property",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece"
+      },
+      "rdfs:label": "return at",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailingLocation"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#stateAbbr",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "@@ a ont:UniqueProperty, ont:UnambiguousProperty",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#State"
+      },
+      "rdfs:label": "state abbreviation",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#to",
+      "@type": "rdfs:Property",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece"
+      },
+      "rdfs:label": "to"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#returnTo",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "range is SocialEntity or something; hm... what property relates SocialEntity to a name used in a mailing address? Does the USPS really talk about SocialEntities, or should I just make one property that combines p:returnTo and c:called?",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece"
+      },
+      "rdfs:label": "return to"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#State",
+      "@type": "rdfs:Class",
+      "rdfs:label": "State",
+      "rdfs:subClassOf": {
+        "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#CountrySubsidiary"
+      }
+    },
+    {
+      "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#CountrySubsidiary",
+      "@type": "rdfs:Class",
+      "rdfs:label": "CountrySubsidiary"
+    },
+    {
+      "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#ContactLocation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ContactLocation"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#postmark",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "e.g. POSTOFFICE p:postmark P. LETTER P '2001-12-17'",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#PostOffice"
+      },
+      "rdfs:label": "postmark",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#PostmarkProperty"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailingLocation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Mailing Location",
+      "rdfs:subClassOf": {
+        "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#ContactLocation"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#from",
+      "@type": "rdfs:Property",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece"
+      },
+      "rdfs:label": "from"
+    },
+    {
+      "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#UrbanArea",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UrbanArea"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MailPiece"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#cityName",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "range is string; should be <13 chars",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#City"
+      },
+      "rdfs:label": "city name",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#zipCode",
+      "@type": "rdfs:Property",
+      "rdfs:comment": "hmm... regex pattern?",
+      "rdfs:label": "zip code"
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#at",
+      "@type": "rdfs:Property",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailPiece"
+      },
+      "rdfs:label": "at",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#MailingLocation"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#PostmarkProperty",
+      "@type": "rdfs:Class",
+      "rdfs:label": "PostmarkProperty",
+      "rdfs:subClassOf": {
+        "@id": "rdf:Property"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/10/swap/pim/usps#City",
+      "@type": "rdfs:Class",
+      "rdfs:label": "City",
+      "rdfs:subClassOf": {
+        "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#UrbanArea"
+      }
+    },
+    {
+      "@id": "http://www.cyc.com/cycdoc/vocab/geography-vocab.html#State-UnitedStates",
+      "@type": "rdfs:Class",
+      "rdfs:label": "State-UnitedStates",
+      "rdfs:subClassOf": {
+        "@id": "http://www.w3.org/2000/10/swap/pim/usps#State"
+      }
+    },
+    {
+      "@id": "rdf:Property",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Property"
+    }
+  ]
+}
+
